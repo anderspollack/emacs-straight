@@ -22,6 +22,7 @@
 (toggle-scroll-bar -1) ;; no scrollbars
 (set-default 'truncate-lines t) ;; truncate long lines instead of wrap at window edge
 (tab-bar-mode 1) ;; enable tab bar (note: not working with emacs-plus on mac)
+(winner-mode 1) ;; enable winner
 (setq inhibit-startup-message t) ;; hide the splash page
 (setq ring-bell-function 'ignore) ;; disable constant bell dinging
 
@@ -29,10 +30,11 @@
 (when is-mac-gui
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'none)
-  (global-set-key (kbd "M-s") 'save-buffer) ;; overrides default reverse-i-search
-  (global-set-key (kbd "M-w") 'delete-window) ;; overrides default M-w kill-ring-save/"Copy"
-  (global-set-key (kbd "M-c") 'kill-ring-save) ;; overrides default M-c capitalize-word
-  (global-set-key (kbd "M-l") 'load-file) ;; overrides default M-l downcase-word
+  (global-set-key (kbd "M-s") 'save-buffer) ;; SAVE: overrides default reverse-i-search
+  (global-set-key (kbd "M-w") 'delete-window) ;; CLOSE: overrides default M-w kill-ring-save/"Copy"
+  (global-set-key (kbd "M-c") 'kill-ring-save) ;; COPY: overrides default M-c capitalize-word
+  (global-set-key (kbd "M-v") 'yank) ;; PASTE: overrides default M-v scroll-down-command/inverse of C-v
+  (global-set-key (kbd "M-l") 'load-file) ;; LOAD: overrides default M-l downcase-word
   )
 
 ;; terminal-specific settings
