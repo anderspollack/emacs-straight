@@ -20,7 +20,7 @@
 ;; default emacs interface overrides
 (tool-bar-mode -1) ;; no default emacs toolbar
 (toggle-scroll-bar -1) ;; no scrollbars
-(set-default 'truncate-lines t)
+(set-default 'truncate-lines t) ;; truncate long lines instead of wrap at window edge
 (tab-bar-mode 1) ;; enable tab bar (note: not working with emacs-plus on mac)
 (setq inhibit-startup-message t) ;; hide the splash page
 (setq ring-bell-function 'ignore) ;; disable constant bell dinging
