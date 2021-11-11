@@ -144,6 +144,23 @@
   (evil-collection-init)
   )
 
+(use-package evil-surround
+  :after evil
+  :config
+  (global-evil-surround-mode 1)
+  )
+
+(use-package vterm
+  :defer t)
+
+;; gemini + gopher browser
+(use-package elpher
+  :defer t)
+
+;; typing practice
+(use-package speed-type
+  :defer t)
+
 ;; use a package just for this session with M-x straight-use-package
 ;; upgrade active packages with M-x straight-pull-all
 ;; activate upgraded versions of packages without restarting Emacs with M-x straight-check-all
