@@ -132,7 +132,8 @@
   (setq evil-want-keybinding nil) ;; necessary for evil-collection
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
-  ;; (setq evil-want-C-u-scroll t)
+  ;; (setq evil-want-C-u-scroll t) ;; not enabled - keepin C-u available
+  (setq evil-respect-visual-line-mode t) ;; move up and down over text with soft line breaks
   :config
   (evil-mode)
   )
