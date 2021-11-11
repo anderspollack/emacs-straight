@@ -134,6 +134,7 @@
   (setq evil-split-window-below t)
   ;; (setq evil-want-C-u-scroll t) ;; not enabled - keepin C-u available
   (setq evil-respect-visual-line-mode t) ;; move up and down over text with soft line breaks
+  (add-hook 'with-editor-mode-hook 'evil-insert-state) ;; ensure magit commit message initializes in insert mode
   :config
   (evil-mode)
   )
