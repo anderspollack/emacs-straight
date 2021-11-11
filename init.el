@@ -75,6 +75,8 @@
   )
 
 ;; global editor behavior
+(setq scroll-conservatively 1)
+;; (global-display-line-numbers-mode)
 (windmove-default-keybindings) ;; use shift + arrow to move in windows
 (electric-pair-mode 1) ;; automatic "" () [] {} matching
 (show-paren-mode 1) ;; highlight matching () []
