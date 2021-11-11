@@ -106,8 +106,14 @@
 ;; install packages
 (use-package org
   :defer t)
+
 (use-package magit
   :defer t)
+
+(use-package git-gutter
+  :config
+  (global-git-gutter-mode 1)
+  )
 
 (use-package gruvbox-theme
   :config
