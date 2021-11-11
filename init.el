@@ -49,6 +49,31 @@
                               (scroll-up 1)))
   )
 
+;; gui-specific settings
+(when (not is-terminal)
+  ;; default font family and size in the current and all future frames
+  (set-face-attribute 'default nil :font "SF Mono-13")
+  (set-frame-font "SF Mono-13" nil t)
+  ;; Setup initial and default frame sizes
+  (setq initial-frame-alist
+	(append (list '(fullscreen . maximized))))
+  (setq default-frame-alist
+	(append (list '(width  . 90)
+                      '(height . 52)
+                      '(top . 50)
+                      '(left . 30)
+                      '(tool-bar-lines . 0)
+                      '(vertical-scroll-bars . nil))))
+  ;; make fringes wider so magit arrows don't look weird
+  (fringe-mode 12)
+  ;; thicken window dividers for easier mouse resizing
+  ;; (window-divider-mode)
+  ;; (setq
+  ;;  window-divider-default-bottom-width 3
+  ;;  window-divider-default-right-width 3
+  ;;  )
+  )
+
 ;; global editor behavior
 (windmove-default-keybindings) ;; use shift + arrow to move in windows
 (electric-pair-mode 1) ;; automatic "" () [] {} matching
