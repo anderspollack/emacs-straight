@@ -8,6 +8,11 @@
 ;; view all major and minor key bindings in a buffer
 ;; C-h m
 
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets.
+(setq user-full-name "Anders Pollack"
+      user-mail-address "pollack.anders@gmail.com")
+
 ;; vars
 (setq is-mac-gui
       (and
