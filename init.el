@@ -13,14 +13,9 @@
 (setq user-full-name "Anders Pollack"
       user-mail-address "pollack.anders@gmail.com")
 
-;; vars
-(setq is-mac-gui
-      (and
-       (eq system-type 'darwin)
-       (eq window-system 'ns)
-       )
-      )
-(setq is-terminal (eq window-system nil))
+;; system vars
+(setq is-mac-gui (and (eq system-type 'darwin) (eq window-system 'ns))
+      is-terminal (eq window-system nil))
 
 ;; default emacs interface overrides
 (tool-bar-mode -1) ;; no default emacs toolbar
