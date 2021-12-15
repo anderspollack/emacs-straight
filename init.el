@@ -47,6 +47,7 @@
   (global-set-key [mouse-5] (lambda ()
                               (interactive)
                               (scroll-up 1)))
+  (set-face-attribute 'region nil :background "brightblue")
   )
 
 ;; gui-specific settings
@@ -72,6 +73,7 @@
   ;;  window-divider-default-bottom-width 3
   ;;  window-divider-default-right-width 3
   ;;  )
+  (global-hl-line-mode 1) ;; enable current line highlight
   )
 
 ;; global editor behavior
