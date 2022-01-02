@@ -18,13 +18,12 @@
       is-terminal (eq window-system nil))
 
 ;; default emacs interface overrides
-(tool-bar-mode -1) ;; no default emacs toolbar
-(toggle-scroll-bar -1) ;; no scrollbars
 (set-default 'truncate-lines t) ;; truncate long lines instead of wrap at window edge
 (tab-bar-mode 1) ;; enable tab bar (note: not working with emacs-plus on mac)
 (winner-mode 1) ;; enable winner
 (setq inhibit-startup-message t) ;; hide the splash page
 (setq ring-bell-function 'ignore) ;; disable constant bell dinging
+(setq meta-prefix-char nil) ;; disable ESC as meta prefix since we have atlt/option
 
 ;; Mac-specific modifiers: use Command as Meta, and leave option unchanged
 (when is-mac-gui
@@ -73,6 +72,8 @@
   ;;  window-divider-default-bottom-width 3
   ;;  window-divider-default-right-width 3
   ;;  )
+  (tool-bar-mode -1) ;; no default emacs toolbar
+  (toggle-scroll-bar -1) ;; no scrollbars
   (global-hl-line-mode 1) ;; enable current line highlight
   )
 
@@ -131,6 +132,7 @@
 
 (use-package evil
   :init
+  (setq evil-esc-delay 0) ;; prevent evil-modee from waiting t send ESC (for default use as meta-prefix-char)
   (setq evil-want-keybinding nil) ;; necessary for evil-collection
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
