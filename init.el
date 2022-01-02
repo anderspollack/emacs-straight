@@ -104,21 +104,25 @@
 (straight-use-package 'use-package)
 
 ;; ensure use-package installs all packages without requiring :straight t (ex: (use-package evil :straight t))
-(setq straight-use-package-by-default t)
+;;(setq straight-use-package-by-default t)
 
 ;; install packages
 (use-package org
   :defer t)
 
 (use-package magit
+  :straight t
   :defer t)
 
 (use-package git-gutter
+  :straight t
+  :defer t
   :config
   (global-git-gutter-mode 1)
   )
 
 (use-package gruvbox-theme
+  :straight t
   :config
   (when (not is-terminal)
     (load-theme 'gruvbox-light-soft t)
@@ -126,11 +130,13 @@
   )
 
 (use-package which-key
+  :straight t
   :config
   (which-key-mode)
   )
 
 (use-package evil
+  :straight t
   :init
   (setq evil-esc-delay 0) ;; prevent evil-modee from waiting t send ESC (for default use as meta-prefix-char)
   (setq evil-want-keybinding nil) ;; necessary for evil-collection
@@ -144,26 +150,31 @@
   )
 
 (use-package evil-collection
+  :straight t
   :after evil
   :config
   (evil-collection-init)
   )
 
 (use-package evil-surround
+  :straight t
   :after evil
   :config
   (global-evil-surround-mode 1)
   )
 
 (use-package vterm
+  :straight t
   :defer t)
 
 ;; gemini + gopher browser
 (use-package elpher
+  :straight t
   :defer t)
 
 ;; typing practice
 (use-package speed-type
+  :straight t
   :defer t)
 
 ;; use a package just for this session with M-x straight-use-package
